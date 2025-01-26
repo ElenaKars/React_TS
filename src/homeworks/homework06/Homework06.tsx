@@ -11,7 +11,7 @@ function Homework06() {
 
     let names: string[] = ["Alice", "Bob", "Charlie"];
 
-    let mixed: [number, string, number, string] = [1, "Alice", 2, "Bob"];
+    let mixed: (string | number)[] = [1, "Alice", 2, "Bob"];
 
     let colors: (number | string | boolean)[] = [123, "red", true, "blue"];
 
