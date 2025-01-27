@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./styles.css";
 import Button from "../Button/Button";
 import likeIcon from "../../assets/like-icon.svg";
 import dislikeIcon from "../../assets/dislike-icon.svg";
+import { FeedbackWrapper, FeedbackContainer, Counter, ButtonWrapper } from "./styles";
 
 function Feedback() {
   const [countLikes, setLikes] = useState<number>(0);
@@ -21,10 +21,10 @@ function Feedback() {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="feedback-container">
-        <div className="counter">{countLikes}</div>
-        <div className="button-wrapper">
+    <FeedbackWrapper>
+      <FeedbackContainer>
+        <Counter>{countLikes}</Counter>
+        <ButtonWrapper>
           <Button
             type='button'
             name="Like"
@@ -32,8 +32,8 @@ function Feedback() {
             imgSrc={likeIcon}
             altImg="Like Icon"
           />
-        </div>
-        <div className="button-wrapper">
+        </ButtonWrapper>
+        <ButtonWrapper>
           <Button
             type='button'
             name="Dislike"
@@ -41,13 +41,13 @@ function Feedback() {
             imgSrc={dislikeIcon}
             altImg="Dislike Icon"
           />
-        </div>
-        <div className="counter">{countDislikes}</div>
-      </div>
-      <div className="button-wrapper">
+        </ButtonWrapper>
+        <Counter>{countDislikes}</Counter>
+      </FeedbackContainer>
+      <ButtonWrapper>
         <Button type='button' id="reset-button" name="RESET" onClick={reset} />
-      </div>
-    </div>
+      </ButtonWrapper>
+    </FeedbackWrapper>
   );
 }
 

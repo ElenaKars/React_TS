@@ -1,4 +1,6 @@
-.counter-wrapper {
+import styled from "@emotion/styled";
+
+export const CounterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,14 +10,14 @@
   background-color: rgb(172, 172, 250);
   border: 1px solid rgb(92, 92, 199);
   border-radius: 4px;
-}
+`;
 
-.buttons-wrapper {
+export const ButtonsWrapper = styled.div`
   width: 100px;
-}
+`;
 
-.result-container {
+export const ResultContainer = styled.div`
   font-size: 24px;
   font-weight: bold;
   color: navy;
-}
+`;

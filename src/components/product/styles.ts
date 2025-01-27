@@ -1,4 +1,6 @@
-.product-wrapper {
+import styled from "@emotion/styled";
+
+export const ProductWrapper = styled.div`
   width: 100%;
   font-family: "Courier New", Courier, monospace;
   font-size: 18px;
@@ -9,8 +11,8 @@
   padding: 20px;
   gap: 20px;
   box-sizing: border-box;
-}
+`;
 
-.price {
+export const PriceStyled = styled.div`
   align-content: end;
-}
+`;

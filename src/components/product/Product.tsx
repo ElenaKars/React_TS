@@ -1,12 +1,13 @@
+import { PriceStyled, ProductWrapper } from "./styles";
 import "./styles.css";
 import { ProductProps } from "./types";
 
 function Product({ name, price }: ProductProps) {
   return (
-    <div className="product-wrapper">
+    <ProductWrapper>
       <h3 className="name">{name}</h3>
-      {price !== undefined && <div className="price"></div>}
-    </div>
+      {price !== undefined && <PriceStyled></PriceStyled>}
+    </ProductWrapper>
   );
 }
 

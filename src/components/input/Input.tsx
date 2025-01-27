@@ -1,27 +1,27 @@
-import "./styles.css";
 import { InputProps } from "./types";
+import { InputWrapper, InputStyled } from "./styles";
 
-function Input({ name,
+function Input({
+  name,
   type = 'text',
   placeholder,
   label,
   id
 }: InputProps) {
   return (
-    <div className="input-wrapper">
+    <InputWrapper>
       {label && (
         <label htmlFor={name} className="input-label">
           {label}
         </label>
       )}
-      <input
-        className="input"
+      <InputStyled
         id={name}
         name={name}
         type={type}
         placeholder={placeholder}
       />
-    </div>
+    </InputWrapper>
   );
 }
 

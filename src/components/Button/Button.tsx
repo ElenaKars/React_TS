@@ -1,8 +1,8 @@
-import "./styles.css";
 import { ButtonProps } from "./types";
-import { MainButton } from "./styles";
+import { MainButton, ButtonImage } from "./styles";
 
 function Button({
+  id,
   name,
   type = "button",
   onClick,
@@ -11,9 +11,9 @@ function Button({
 }: ButtonProps) {
 
   return (
-    <MainButton type={type} onClick={onClick}>
+    <MainButton id={id} type={type} onClick={onClick}>
       {name}
-      {imgSrc && <img src={imgSrc} alt={altImg} className="button-image" />}
+      {imgSrc && <ButtonImage src={imgSrc} alt={altImg} />}
     </MainButton>
   );
 }
