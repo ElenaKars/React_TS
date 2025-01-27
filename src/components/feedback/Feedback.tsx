@@ -8,14 +8,14 @@ function Feedback() {
   const [countLikes, setLikes] = useState<number>(0);
   const [countDislikes, setDislikes] = useState<number>(0);
 
-  const incrLikes = () => {
+  const incrLikes = (): void => {
     setLikes((state) => state + 1);
   };
-  const incrDislikes = () => {
+  const incrDislikes = (): void => {
     setDislikes((state) => state + 1);
   };
 
-  const reset = () => {
+  const reset = (): void => {
     setLikes(0);
     setDislikes(0);
   };

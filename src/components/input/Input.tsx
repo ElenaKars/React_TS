@@ -4,7 +4,8 @@ import { InputProps } from "./types";
 function Input({ name,
   type = 'text',
   placeholder,
-  label
+  label,
+  id
 }: InputProps) {
   return (
     <div className="input-wrapper">

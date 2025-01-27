@@ -1,4 +1,4 @@
 export interface ProductProps {
-  name: string;
-  price?: number;
+  name?: string;
+  price?: number | string;
 }
