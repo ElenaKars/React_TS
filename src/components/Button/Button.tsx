@@ -1,9 +1,8 @@
 import "./styles.css";
 import { ButtonProps } from "./types";
-
+import { MainButton } from "./styles";
 
 function Button({
-  id,
   name,
   type = "button",
   onClick,
@@ -12,14 +11,13 @@ function Button({
 }: ButtonProps) {
 
   return (
-    <button id={id} className="main-button" type={type} onClick={onClick}>
+    <MainButton type={type} onClick={onClick}>
       {name}
       {imgSrc && <img src={imgSrc} alt={altImg} className="button-image" />}
-    </button>
+    </MainButton>
   );
 }
 
 //default export must be only one in the file
-
 export default Button;
 

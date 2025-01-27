@@ -1,3 +1,8 @@
+// Discriminated union
+// type ExampleDiscriminated =
+// | {age: string; date: string}
+// | {age?: undefined; date?: string}
+
 interface AnimalData {
   name: string;
   species: string;

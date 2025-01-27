@@ -1,8 +1,9 @@
-import './App.css';
+import GlobalStyles from './styles/GlobalStyles';
 
 //lessons
 // import Lesson06 from './lessons/lesson06/Lesson06';
-import Lesson07 from './lessons/lesson07/Lesson07';
+// import Lesson07 from './lessons/lesson07/Lesson07';
+import Lesson08 from './lessons/lesson08_emotion/Lesson08';
 
 //homeworks
 
@@ -12,11 +13,11 @@ function App() {
 
   return (
     <>
-      <div className='app'>
-        {/* <Lesson06 /> */}
-        {/* Topic: TS - Object types, enum */}
-        <Lesson07 />
-      </div>
+      <GlobalStyles />
+      {/* <Lesson06 /> */}
+      {/* Topic: TS - Object types, enum */}
+      {/* <Lesson07 /> */}
+      <Lesson08 />
     </>
   );
 }
