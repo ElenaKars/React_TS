@@ -16,3 +16,5 @@ export const ProductWrapper = styled.div`
 export const PriceStyled = styled.div`
   align-content: end;
 `;
+
+export const NameStyled = styled.h3``;
