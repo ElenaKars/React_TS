@@ -1,25 +1,29 @@
 import { InputProps } from "./types";
-import { InputWrapper, InputStyled } from "./styles";
+import { InputWrapper, InputStyled, Label } from "./styles";
 
 function Input({
   name,
   type = 'text',
   placeholder,
   label,
-  id
+  id,
+  value,
+  onChange
 }: InputProps) {
   return (
     <InputWrapper>
       {label && (
-        <label htmlFor={name} className="input-label">
+        <Label htmlFor={name} className="input-label">
           {label}
-        </label>
+        </Label>
       )}
       <InputStyled
         id={name}
         name={name}
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
     </InputWrapper>
   );

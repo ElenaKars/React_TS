@@ -1,4 +1,5 @@
-import './styles.css';
+import { Lesson06Wrapper } from './styles';
+
 
 function Lesson06() {
     let userName: string = "Tom";
@@ -76,9 +77,9 @@ function Lesson06() {
 
 
     return (
-        <div className="lesson06-wrapper">
+        <Lesson06Wrapper>
             Lesson 06 - Typescript Intro
-        </div>
+        </Lesson06Wrapper>
     );
 }
 

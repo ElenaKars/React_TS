@@ -3,6 +3,7 @@ import { AnimalsData } from "../homework07/data";
 import { Homework08Wrapper } from "./styles";
 // import Counter from "../../components/counter/Counter";
 import Feedback from "../../components/feedback/Feedback";
+import Button from "../../components/Button/Button";
 
 export default function Homework08() {
     const animalCards = AnimalsData.map((animal) => {
@@ -16,6 +17,7 @@ export default function Homework08() {
     });
     // return <Homework08Styled>{animalCards}</Homework08Styled>;
     // return <Homework08Wrapper><Counter /></Homework08Wrapper>;
-    return <Homework08Wrapper><Feedback /></Homework08Wrapper>;
+    // return <Homework08Wrapper><Feedback /></Homework08Wrapper>;
+    return <Homework08Wrapper><Button /><Button disabled /></Homework08Wrapper>;
 
 }

@@ -6,7 +6,7 @@ function Product({ name, price }: ProductProps) {
   return (
     <ProductWrapper>
       <NameStyled>{name}</NameStyled>
-      {price !== undefined && <PriceStyled></PriceStyled>}
+      {price !== undefined && <PriceStyled>{price}</PriceStyled>}
     </ProductWrapper>
   );
 }

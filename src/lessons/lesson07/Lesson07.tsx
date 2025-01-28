@@ -1,4 +1,4 @@
-import './styles.css';
+import { Lesson07Wrapper } from "./styles";
 
 function Lesson07() {
     //type any 
@@ -126,7 +126,7 @@ function Lesson07() {
 
 
     return (
-        <div className="lesson07-wrapper">TS Lesson 07</div>
+        <Lesson07Wrapper>TS Lesson 07</Lesson07Wrapper>
     );
 }
 

@@ -19,4 +19,10 @@ export const InputStyled = styled.input`
   padding: 12px;
   border-radius: 4px;
   border: 1px solid #000000;
+
+  &::placeholder {
+    color: #a19f9f;
+  }
 `;
+
+export const Label = styled.label``;

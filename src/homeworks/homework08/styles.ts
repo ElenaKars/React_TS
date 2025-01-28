@@ -6,5 +6,6 @@ export const Homework08Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   gap: 30px;
-  flex: 1;
+  width: 300px;
+  margin: auto;
 `;

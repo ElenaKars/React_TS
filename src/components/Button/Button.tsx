@@ -8,10 +8,11 @@ function Button({
   onClick,
   imgSrc = "",
   altImg = "",
+  disabled = false
 }: ButtonProps) {
 
   return (
-    <MainButton id={id} type={type} onClick={onClick}>
+    <MainButton id={id} type={type} onClick={onClick} disabled={disabled}>
       {name}
       {imgSrc && <ButtonImage src={imgSrc} alt={altImg} />}
     </MainButton>

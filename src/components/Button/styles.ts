@@ -1,5 +1,9 @@
 import styled from "@emotion/styled";
 
+interface MainButtonStyledProps {
+  disabled: boolean;
+}
+
 export const MainButton = styled.button`
   display: flex;
   align-items: center;
@@ -8,7 +12,7 @@ export const MainButton = styled.button`
   width: 100%;
   height: 70px;
   padding: 20px 0;
-  background-color: #1f27f5;
+  background-color: ${({ disabled }) => (disabled ? "#bebec7" : "#1f27f5")};
   border: none;
   border-radius: 4px;
   font-size: 20px;
