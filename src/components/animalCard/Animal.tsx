@@ -1,14 +1,16 @@
-import "./styles.css";
+// import "./styles.css";
 import { AnimalProps } from "./types";
+import { AnimalCardStyled, ImageAnimal } from "./styles";
+// import { AnimalsData } from "../../homeworks/homework07/data";
 
 function AnimalCard({ animalName, animalSpecies, animalImg, children }: AnimalProps) {
   return (
-    <div className="animalCard-wrapper">
+    <AnimalCardStyled>
       <h3>{animalName}</h3>
       <div>{animalSpecies}</div>
-      <img src={animalImg} className="card-image" />
+      <ImageAnimal src={animalImg} className="card-image" />
       {children}
-    </div>
+    </AnimalCardStyled>
   );
 }
 

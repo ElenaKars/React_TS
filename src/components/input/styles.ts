@@ -1,4 +1,6 @@
-.input-wrapper {
+import styled from "@emotion/styled";
+
+export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -7,9 +9,9 @@
   line-height: 24px;
   font-size: 16px;
   font-weight: 400;
-}
+`;
 
-.input {
+export const InputStyled = styled.input`
   font-family: "Lato", sans-serif;
   font-size: 16px;
   opacity: 40%;
@@ -17,4 +19,4 @@
   padding: 12px;
   border-radius: 4px;
   border: 1px solid #000000;
-}
+`;

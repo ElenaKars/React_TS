@@ -1,4 +1,6 @@
-.feedback-wrapper {
+import styled from "@emotion/styled";
+
+export const FeedbackWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -6,15 +8,14 @@
   align-items: center;
   min-width: 500px;
   height: 70px;
-}
-
-.feedback-container {
+`;
+export const FeedbackContainer = styled.div`
   display: flex;
   width: 100%;
   gap: 10px;
-}
+`;
 
-.counter {
+export const Counter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,22 +25,17 @@
   color: blue;
   width: 50%;
   height: 100%;
-}
-.button-wrapper {
+`;
+
+export const ButtonWrapper = styled.div`
   width: 100%;
-}
+`;
 
-.button-image {
-  width: 23px;
-  height: 23px;
-  filter: invert(100%);
-}
+// #reset-button {
+//   background-color: grey;
+//   cursor: pointer;
+// }
 
-#reset-button {
-  background-color: grey;
-  cursor: pointer;
-}
-
-#reset-button:hover {
-  background-color: rgb(93, 92, 92);
-}
+// #reset-button:hover {
+//   background-color: rgb(93, 92, 92);
+// }

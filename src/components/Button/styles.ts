@@ -13,4 +13,20 @@ export const MainButton = styled.button`
   border-radius: 4px;
   font-size: 20px;
   color: white;
+
+  ${({ id }) =>
+    id === "reset-button" &&
+    `
+    background-color: grey;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(93, 92, 92);
+    }
+  `}
+`;
+export const ButtonImage = styled.img`
+  width: 23px;
+  height: 23px;
+  filter: invert(100%);
 `;
