@@ -14,7 +14,7 @@ export const InputWrapper = styled.div`
 export const InputStyled = styled.input`
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  opacity: 40%;
+  /* opacity: 40%; */
   height: 50px;
   padding: 12px;
   border-radius: 4px;

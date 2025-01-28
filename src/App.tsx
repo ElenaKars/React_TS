@@ -8,7 +8,8 @@ import Lesson09 from './lessons/lesson09/Lesson09';
 
 
 //homeworks
-import Homework08 from './homeworks/homework08/Homework08';
+// import Homework08 from './homeworks/homework08/Homework08';
+import Homework09 from './homeworks/homework09/Homework09';
 
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
       {/* <Lesson07 /> */}
       {/* <Lesson08 /> */}
       {/* <Homework08 /> */}
-      <Lesson09 />
+      {/* <Lesson09 /> */}
+      <Homework09 />
     </>
   );
 }
