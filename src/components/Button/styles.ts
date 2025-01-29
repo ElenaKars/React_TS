@@ -4,7 +4,7 @@ interface MainButtonStyledProps {
   disabled: boolean;
 }
 
-export const MainButton = styled.button`
+export const MainButton = styled.button<MainButtonStyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;

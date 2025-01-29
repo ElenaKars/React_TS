@@ -13,6 +13,9 @@ function Homework09() {
     const [inputValue, setValue] = useState<string>('');
     const [inputValue2, setValue2] = useState<string>('');
     const [outputIsVisible, setVisibleOutput] = useState<boolean>(false);
+    //add 2 extra states for storage values, whish should be displayed at the time the block is displayed
+    const [output, setOutput] = useState<string>('');
+    const [output2, setOutput2] = useState<string>('');
 
     const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value);
@@ -22,6 +25,9 @@ function Homework09() {
     };
 
     const onClick = () => {
+        setOutput(inputValue);
+        setOutput2(inputValue2);
+
         setVisibleOutput(!outputIsVisible);
     };
 
@@ -43,13 +49,15 @@ function Homework09() {
             </InputsContainer>
             <OutputBoxWrapper isVisible={outputIsVisible}>
                 <OutputBoxLabel>Output Value 1</OutputBoxLabel>
-                <OutputBox>{inputValue}</OutputBox>
-                <OutputBoxLabel>Output Value 2</OutputBoxLabel>
-                <OutputBox>{inputValue2}</OutputBox>
+                {output && <OutputBox>{output}</OutputBox>}
+                {output2 && <OutputBoxLabel>Output Value 2</OutputBoxLabel>}
+                {output2 && <OutputBox>{output2}</OutputBox>}
             </OutputBoxWrapper>
             <Button
                 name={outputIsVisible ? "Hide Values" : "Get Values"}
-                onClick={onClick}></Button>
+                onClick={onClick}
+                disabled={!inputValue && !inputValue2} />
+
         </Homework09Wrapper>
     );
 }
