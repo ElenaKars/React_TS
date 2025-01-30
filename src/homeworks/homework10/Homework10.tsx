@@ -23,8 +23,8 @@ function Homework10() {
         const PIC_URL: string = 'https://dog.ceo/api/breeds/image/random';
         setImage('');
         setError(undefined);
+        setLoading(true);
         try {
-            setLoading(true);
             const result = await axios.get(PIC_URL);
             setImage(result.data.message);
         } catch (error: any) {
@@ -33,7 +33,12 @@ function Homework10() {
         setLoading(false);
     };
 
-    useEffect(() => { fetchPicData(); }, [inputValue]);
+    useEffect(() => {
+        if (inputValue) {
+            fetchPicData();
+        }
+    },
+        [inputValue]);
 
     return (
         <Homework10Wrapper>
@@ -43,7 +48,7 @@ function Homework10() {
             </FormContainer>
 
             <ResultBox>
-                {inputValue && image && <ImageStyled src={image} />}
+                {image && <ImageStyled src={image} />}
             </ResultBox>
             {loading && <Spinner />}
             {error && <ErrorBlock>{error}</ErrorBlock>}
