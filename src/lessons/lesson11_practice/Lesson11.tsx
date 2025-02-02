@@ -1,26 +1,43 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { v4 } from 'uuid';
+
 import Button from "../../components/Button/Button";
-import { ButtonWrapper, FactCard, InfoContainer, Lesson11Wrapper } from "./styles";
+import { ButtonWrapper, DeleteBtnWrapper, DeleteButton, FactCard, InfoContainer, Lesson11Wrapper } from "./styles";
 import axios from "axios";
 import Spinner from "../../components/Spinner/Spinner";
 import { ErrorBlock } from "../lesson10/styles";
 
 function Lesson11() {
   const URL_DATA: string = 'https://catfact.ninja/fact';
-  const [facts, setFact] = useState<string[]>([]);
+  const [facts, setFacts] = useState<{ id: string; text: string; }[]>([]);
   const [isVisible, setVisible] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<undefined | string>(undefined);
   const [disabled, setDisabled] = useState<boolean>(false);
 
+
   const factCards = facts.map((fact, i) => {
     return (
-      <><FactCard key={i} isNew={i === facts.length - 1}>{fact}</FactCard></>
+      <>
+        <FactCard key={fact.id} isNew={i === facts.length - 1}>
+          {fact.text}
+          <DeleteBtnWrapper>
+            <DeleteButton onClick={() => deleteFact(fact.id)}>X</DeleteButton>
+          </DeleteBtnWrapper>
+        </FactCard >
+      </>
     );
   });
 
+  const deleteFact = (id: string) => {
+    setFacts((prevFacts) => prevFacts.filter((fact) => fact.id !== id));
+    if (facts.length === 1) {
+      setVisible(false);
+    }
+  };
+
   const deleteAll = () => {
-    setFact([]);
+    setFacts([]);
     setVisible(false);
   };
 
@@ -30,14 +47,14 @@ function Lesson11() {
       setLoading(true);
     }
     setDisabled(true);
-    // setVisible(false);
+
     try {
       const result = await axios.get(URL_DATA);
-      const data = result.data.fact;
-      setFact((facts) => [...facts, data]);
+      const newFact = { id: v4(), text: result.data.fact };
+      setFacts((prevFacts) => [...prevFacts, newFact]);
       setVisible(true);
     } catch (error: any) {
-      setError(error.massage);
+      setError(error.message);
     } finally {
       setLoading(false);
       setDisabled(false);
@@ -46,7 +63,6 @@ function Lesson11() {
 
   useEffect(() => {
     if (facts.length === 0) {
-
       getCatsFact();
     }
   }, []);
@@ -60,10 +76,9 @@ function Lesson11() {
       {loading && <Spinner />}
 
       {error && <ErrorBlock />}
-      {facts && <InfoContainer isVisible={isVisible}>{factCards}
-      </InfoContainer>}
+      {facts && <InfoContainer isVisible={isVisible}>{factCards}</InfoContainer>}
       <ButtonWrapper>
-        <Button name="DELETE ALL DATA" onClick={deleteAll} />
+        {facts.length > 0 && <Button name="DELETE ALL DATA" onClick={deleteAll} />}
       </ButtonWrapper>
     </Lesson11Wrapper>
   );
