@@ -18,14 +18,12 @@ function Lesson11() {
 
   const factCards = facts.map((fact, i) => {
     return (
-      <>
-        <FactCard key={fact.id} isNew={i === facts.length - 1}>
-          {fact.text}
-          <DeleteBtnWrapper>
-            <DeleteButton onClick={() => deleteFact(fact.id)}>X</DeleteButton>
-          </DeleteBtnWrapper>
-        </FactCard >
-      </>
+      <FactCard key={fact.id} isNew={i === facts.length - 1}>
+        {fact.text}
+        <DeleteBtnWrapper>
+          <DeleteButton onClick={() => deleteFact(fact.id)}>X</DeleteButton>
+        </DeleteBtnWrapper>
+      </FactCard >
     );
   });
 
