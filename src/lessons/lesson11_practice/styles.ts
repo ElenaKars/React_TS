@@ -5,11 +5,7 @@ interface InfoContainerProps {
 }
 interface FactCardProps {
   isNew?: boolean;
-  isDeleted?: boolean;
 }
-// interface DeleteAllFactsProps {
-//   isVisible: boolean;
-// }
 
 export const Lesson11Wrapper = styled.div`
   display: flex;
@@ -85,7 +81,7 @@ export const InfoContainer = styled.div<InfoContainerProps>`
 `;
 
 export const FactCard = styled.div<FactCardProps>`
-  display: ${({ isDeleted }) => (isDeleted ? "none" : "flex")};
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px 15px 15px;
