@@ -1,6 +1,13 @@
 import { ChangeEvent } from "react";
 
-export interface InputProps {
+export interface EmployeeFormValues {
+  fullName: string;
+  age: string;
+  jobTitle?: string;
+  termsAccepted: boolean;
+}
+
+export interface InputCheckProps {
   name: string;
   type?: "text" | "password" | "email" | "number" | "tel" | "url" | "checkbox";
   placeholder?: string;
