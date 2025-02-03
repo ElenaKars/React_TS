@@ -13,7 +13,7 @@ function Lesson11() {
   const [isVisible, setVisible] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<undefined | string>(undefined);
-  const [disabled, setDisabled] = useState<boolean>(false);
+
 
 
   const factCards = facts.map((fact, i) => {
@@ -44,7 +44,6 @@ function Lesson11() {
     if (facts.length === 0) {
       setLoading(true);
     }
-    setDisabled(true);
 
     try {
       const result = await axios.get(URL_DATA);
@@ -55,7 +54,6 @@ function Lesson11() {
       setError(error.message);
     } finally {
       setLoading(false);
-      setDisabled(false);
     }
   };
 
@@ -68,7 +66,7 @@ function Lesson11() {
   return (
     <Lesson11Wrapper>
       <ButtonWrapper>
-        <Button name="GET MORE INFO" onClick={getCatsFact} disabled={disabled} />
+        <Button name="GET MORE INFO" onClick={getCatsFact} disabled={loading} />
       </ButtonWrapper>
 
       {loading && <Spinner />}
