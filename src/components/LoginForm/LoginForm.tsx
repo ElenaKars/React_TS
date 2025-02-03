@@ -27,22 +27,30 @@ function LoginForm() {
   // };
 
   //create a scheme using Yup
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
   const schema = Yup.object().shape({
     email: Yup.string().required('Field email is required')
       .email('Field has type email')
       .max(20, 'Max 20 symbols')
       .min(10, 'Min 10 symbols')
       .typeError('Email must be a string'),
-    password: Yup.number().required('Field password is required')
-      .typeError('Password must be a number')
-      .test('Check min passwords length', 'Min 10 symbols', (value) => String(value).length >= 10)
-      .test('Check max passwords length', 'Max 20 symbols', (value) => String(value).length <= 20)
+    // password: Yup.number().required('Field password is required')
+    //   .typeError('Password must be a number')
+    //   .test('Check min passwords length', 'Min 10 symbols', (value) => String(value).length >= 10)
+    //   .test('Check max passwords length', 'Max 20 symbols', (value) => String(value).length <= 20)
+    password: Yup.string()
+      .matches(passwordRegex, 'Password must be at least 8 characters, including uppercase, lowercase and special character')
   });
 
 
   //Настройка формы. useFormik, как аргумент принимает объект настройки, для определенной
   //При вызове useFormik возвращается объект, в котором храняться значения из полей, ошибки, различные методы для работы с формой
   const formik = useFormik({
+    // const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    //   formik.setFieldValue('password', event.target.value)
+    //   formik.validateField('password')
+    // }
     // initialValues, onSubmit
     initialValues: {
       // Inputs names: email and password

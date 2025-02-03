@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 
 import Button from "../Button/Button";
 import Input from "../input/Input";
-import { EmployeeFormWrapper, InputsContainer, Title } from "./styles";
+import { Checkbox, CheckboxContainer, Checkboxlabel, EmployeeFormWrapper, InputsContainer, Title } from "./styles";
 import { EmployeeFormValues } from './types';
 
 function EmployeeForm() {
@@ -21,7 +21,6 @@ function EmployeeForm() {
             .matches(/^[a-zA-Z\s]*$/, "Job Title must only contain letters and spaces"),
         termsAccepted: Yup.boolean().required('Field Terms Accepted is required')
             .oneOf([true], "You must accept the terms and conditions")
-
     });
 
     const formik = useFormik({
@@ -65,9 +64,19 @@ function EmployeeForm() {
                     placeholder="Enter your job title"
                     error={formik.errors.jobTitle}
                 />
-                <Input type='checkbox' name='termsAccepted' label='I accept the Terms and Conditions*' checked={formik.values.termsAccepted} onChange={formik.handleChange} error={formik.errors.termsAccepted} />
+                <CheckboxContainer>
+                    <Checkbox
+                        type='checkbox'
+                        id='termsAccepted'
+                        name='termsAccepted'
+                        checked={formik.values.termsAccepted}
+                        onChange={formik.handleChange}
+                    />
+                    <Checkboxlabel htmlFor='termsAccepted'>I accept the Terms and Conditions*</Checkboxlabel>
+                </CheckboxContainer>
+                {/* <Input type='checkbox' name='termsAccepted' label='I accept the Terms and Conditions*' checked={formik.values.termsAccepted} onChange={formik.handleChange} error={formik.errors.termsAccepted} /> */}
             </InputsContainer>
-            <Button type="submit" name="CREATE" />
+            <Button type="submit" name="CREATE" disabled={!formik.values.termsAccepted} />
         </EmployeeFormWrapper>
     );
 }
