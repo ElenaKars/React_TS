@@ -1,3 +1,4 @@
+import Homework12 from './homeworks/homework12/Homework12';
 import GlobalStyles from './styles/GlobalStyles';
 
 //lessons
@@ -6,7 +7,11 @@ import GlobalStyles from './styles/GlobalStyles';
 // import Lesson08 from './lessons/lesson08_emotion/Lesson08';
 // import Lesson09 from './lessons/lesson09/Lesson09';
 // import Lesson10 from './lessons/lesson10/Lesson10';
+
 import Lesson11 from './lessons/lesson11_practice/Lesson11';
+
+// import Lesson12 from './lessons/lesson12_yup_formik/Lesson12';
+
 
 
 //homeworks
@@ -32,7 +37,12 @@ function App() {
       {/* <Homework09 /> */}
       {/* <Lesson10 /> */}
       {/* <Homework10 /> */}
+
       <Lesson11 />
+
+      {/* <Lesson12 /> */}
+      <Homework12 />
+
     </>
   );
 }

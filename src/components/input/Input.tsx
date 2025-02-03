@@ -1,5 +1,5 @@
 import { InputProps } from "./types";
-import { InputWrapper, InputStyled, Label } from "./styles";
+import { InputWrapper, InputStyled, Label, ErrorMessage } from "./styles";
 
 function Input({
   name,
@@ -8,7 +8,8 @@ function Input({
   label,
   id,
   value,
-  onChange
+  onChange,
+  error
 }: InputProps) {
   return (
     <InputWrapper>
@@ -25,6 +26,7 @@ function Input({
         value={value}
         onChange={onChange}
       />
+      <ErrorMessage>{error}</ErrorMessage>
     </InputWrapper>
   );
 }
