@@ -2,7 +2,7 @@ import AnimalCard from "../../components/animalCard/Animal";
 import { AnimalsData } from "../homework07/data";
 import { Homework08Wrapper } from "./styles";
 // import Counter from "../../components/counter/Counter";
-import Feedback from "../../components/feedback/Feedback";
+// import Feedback from "../../components/feedback/Feedback";
 import Button from "../../components/Button/Button";
 
 export default function Homework08() {
