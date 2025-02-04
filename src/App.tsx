@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Lesson11 from './lessons/lesson11_practice/Lesson11';
 //import Lesson13 from 'lessons/lesson13_routing/Lesson13';
 // import Lesson12 from './lessons/lesson12_yup_formik/Lesson12';
+import Lesson14 from 'lessons/Lesson14/Lesson14';
 import Layout from 'components/layout/Layout';
 import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
@@ -17,7 +18,7 @@ import Users from 'pages/Users/Users';
 import User from 'pages/Users/components/User/User';
 import Tesla from 'pages/Clients/components/Tesla/Tesla';
 import Apple from 'pages/Clients/components/Apple/Apple';
-import Nvidea from 'pages/Clients/components/Nvidea/Nvidea';
+import Nvidea from 'pages/Clients/components/Globe/Nvidea';
 import Clients from 'pages/Clients/Clients';
 
 
@@ -46,6 +47,9 @@ function App() {
           <Route path='/clients/tesla' element={<Tesla />} />
           <Route path='/clients/apple' element={<Apple />} />
           <Route path='/clients/nvidea' element={<Nvidea />} />
+          <Route path='/lesson14' element={<Lesson14 />} />
+          {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
+          <Route path='*' element='Page not found' />
           {/* Route - компонент, в который передаётся маршрут и контент, 
          который нужно отрисовать по этому маршруту в Layout */}
         </Routes>

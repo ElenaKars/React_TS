@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const LayoutComponent = styled.div`
   display: flex;
@@ -16,7 +16,7 @@ export const Header = styled.header`
   background-color: rebeccapurple;
   color: white;
 `;
-export const LogoContainer = styled(NavLink)`
+export const LogoContainer = styled.div`
   width: 70px;
   height: 70px;
   background-color: white;

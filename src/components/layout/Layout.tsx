@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import {
     LayoutComponent,
     Header,
@@ -10,10 +11,13 @@ import {
 import { LayoutProps } from './types.ts';
 
 function Layout({ children }: LayoutProps) {
+    const navigate = useNavigate();
+
     return (
         <LayoutComponent>
             <Header>
-                <LogoContainer to='/'></LogoContainer>
+                <LogoContainer onClick={() => navigate('/')}></LogoContainer>
+                {/* <LogoContainer to='/'></LogoContainer> */}
                 <NavContainer>
                     <StyledNavLink to='/'
                         style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none" }
@@ -27,13 +31,17 @@ function Layout({ children }: LayoutProps) {
                     <StyledNavLink to='/clients'
                         style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none" }
                         )}>Clients</StyledNavLink>
+                    <StyledNavLink to='/lesson14'
+                        style={({ isActive }) => ({ textDecoration: isActive ? "underline" : "none" }
+                        )}>Lesson14</StyledNavLink>
                 </NavContainer>
             </Header>
             <Main>{children}</Main>
             <Footer>
-                <LogoContainer to='/'></LogoContainer>
+                <LogoContainer onClick={() => navigate('/')} />
+                {/* <LogoContainer to='/'></LogoContainer> */}
             </Footer>
-        </LayoutComponent>
+        </LayoutComponent >
     );
 }
 
