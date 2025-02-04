@@ -16,7 +16,7 @@ export const Header = styled.header`
   background-color: rebeccapurple;
   color: white;
 `;
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(NavLink)`
   width: 70px;
   height: 70px;
   background-color: white;

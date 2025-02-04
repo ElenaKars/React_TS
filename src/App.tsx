@@ -15,6 +15,10 @@ import Home from 'pages/Home/Home';
 import About from 'pages/About/About';
 import Users from 'pages/Users/Users';
 import User from 'pages/Users/components/User/User';
+import Tesla from 'pages/Clients/components/Tesla/Tesla';
+import Apple from 'pages/Clients/components/Apple/Apple';
+import Nvidea from 'pages/Clients/components/Nvidea/Nvidea';
+import Clients from 'pages/Clients/Clients';
 
 
 //homeworks
@@ -38,6 +42,10 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/user' element={<User />} />
+          <Route path='/clients' element={<Clients />} />
+          <Route path='/clients/tesla' element={<Tesla />} />
+          <Route path='/clients/apple' element={<Apple />} />
+          <Route path='/clients/nvidea' element={<Nvidea />} />
           {/* Route - компонент, в который передаётся маршрут и контент, 
          который нужно отрисовать по этому маршруту в Layout */}
         </Routes>
