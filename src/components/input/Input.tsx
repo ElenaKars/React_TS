@@ -19,6 +19,7 @@ function Input({
         </Label>
       )}
       <InputStyled
+        as={type === "textarea" ? "textarea" : "input"}
         id={name}
         name={name}
         type={type}

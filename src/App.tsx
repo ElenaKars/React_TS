@@ -20,6 +20,7 @@ import Tesla from 'pages/Clients/components/Tesla/Tesla';
 import Apple from 'pages/Clients/components/Apple/Apple';
 import Nvidea from 'pages/Clients/components/Globe/Nvidea';
 import Clients from 'pages/Clients/Clients';
+import Homework14 from 'homeworks/homework14/Homework14';
 
 
 //homeworks
@@ -50,6 +51,7 @@ function App() {
           <Route path='/lesson14' element={<Lesson14 />} />
           {/* Route * - этот route показывает контент, если маршрута не существует в перечисленных выше */}
           <Route path='*' element='Page not found' />
+          <Route path='/homework14' element={<Homework14 />} />
           {/* Route - компонент, в который передаётся маршрут и контент, 
          который нужно отрисовать по этому маршруту в Layout */}
         </Routes>
